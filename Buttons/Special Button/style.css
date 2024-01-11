@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit&display=swap");
+
+:root {
+  --fontSize: 50px;
+  --button: 356, 80%;
+  --buttonColor: hsl(var(--button), 70%);
+  --sideColor: hsl(var(--button), 40%);
+  --text: hsl(var(--button), 30%);
+  --bgColor: #fae5d3;
+}
+body {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: var(--bgColor);
+}
+button {
+  position: relative;
+  font-size: 0;
+  font-family: "Outfit", sans-serif;
+  transition: all 300ms cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  border-radius: 999px;
+  padding: calc(var(--fontSize) / 2);
+  height: calc(var(--fontSize) * 2);
+  min-width: calc(var(--fontSize) * 2);
+  line-height: calc(var(--fontSize) * 0.75);
+  border: none;
+  outline: none;
+  background-color: var(--buttonColor);
+  transform: rotate(-25deg);
+  color: var(--text);
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: -2px 2px 2px #ffffffbb inset, -2px -1px 2px #ffffff88 inset,
+    0 0 10px #0f004a77 inset, 0 0 0 14px var(--buttonColor) inset,
+    0 0 8px 16px #0f004a44 inset, -2px 4px 0 var(--sideColor),
+    -1px 1px 0 var(--sideColor), 0 2px 1px rgb(0 0 0 / 9%),
+    0 4px 2px rgb(0 0 0 / 9%), 0 8px 4px rgb(0 0 0 / 9%),
+    0 16px 8px rgb(0 0 0 / 9%), 0 32px 16px rgb(0 0 0 / 9%),
+    -6px 0 20px #0f004a44;
+  box-shadow: -2px 2px 2px #ffffffbb inset, -2px -1px 2px #ffffff88 inset,
+    0 0 10px #0f004a77 inset, 0 0 0 14px var(--buttonColor) inset,
+    0 0 8px 16px #0f004a44 inset, -2px 4px 0 var(--sideColor),
+    -6px 4px 8px #0f004a44, -3px 4px 2px #0f004a66;
+}
+button:hover {
+  transform: rotate(0);
+  overflow: visible;
+  font-size: var(--fontSize);
+}
+button::before,
+button::after {
+  content: ": ";
+  font-weight: bold;
+  text-shadow: 2px 0 0 var(--sideColor), 0 0 4px #0f004a55,
+    1px 0 0 var(--sideColor), 1px -1px 0 var(--sideColor);
+  color: var(--bgColor);
+  font-size: var(--fontSize);
+}
+@media only screen and (max-width: 600px) {
+  button::before,
+  button::after {
+    content: ":";
+  }
+}
